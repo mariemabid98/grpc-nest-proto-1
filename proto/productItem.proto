@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package productItem;
+
+service ProductItemService {
+  rpc CreateProductItem (CreateProductItemRequest) returns (CreateProductItemResponse) {}
+}
+
+message CreateProductItemRequest {
+ int32 id = 1;
+  string body = 2;
+  double createdAt = 3;
+  double price = 4;
+  int32 quantity = 5;
+}
+
+message CreateProductItemResponse {
+  int32 status = 1;
+  repeated string error = 2;
+  int32 id = 3;
+}
