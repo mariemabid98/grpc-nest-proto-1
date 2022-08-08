@@ -1,18 +1,20 @@
 syntax = "proto3";
 
-package order;
+package productItem;
 
-service OrderService {
-  rpc CreateOrder (CreateOrderRequest) returns (CreateOrderResponse) {}
+service ProductItemService {
+  rpc CreateProductItem (CreateProductItemRequest) returns (CreateProductItemResponse) {}
 }
 
-message CreateOrderRequest {
-  int32 productId = 1;
-  int32 quantity = 2;
-  int32 userId = 3;
+message CreateProductItemRequest {
+ int32 id = 1;
+  string body = 2;
+  double createdAt = 3;
+  double price = 4;
+  int32 quantity = 5;
 }
 
-message CreateOrderResponse {
+message CreateProductItemResponse {
   int32 status = 1;
   repeated string error = 2;
   int32 id = 3;
